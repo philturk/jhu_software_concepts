@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Philip Turk</h1>
+<h2>Professor of Statistics</h2>
+<div style="display: flex; align-items: center;">
+    <div style="flex: 1; padding: 20px;">
+        <p>Dr. Philip Turk is a Professor of Statistics and the Director of the Clinical 
+            and Translational Research Institute at Northeast Ohio Medical University (NEOMED). 
+            Prior to this, he was a Professor and Chair in the Department of Data Science in the 
+            School of Population Health at the University of Mississippi Medical Center. In healthcare, 
+            he also served as an Associate Professor and Director of Data Science and Artificial 
+            Intelligence at Atrium Health in Charlotte, North Carolina. Dr. Turk earned his MS in 
+            Biology at Western Illinois University and his PhD in Statistics at Montana State University, 
+            and brings over 27 years of direct academic and industry experience to NEOMED. As a statistical 
+            consultant, he has partnered with multidisciplinary faculty on numerous extramurally funded 
+            studies that span data science, computational statistics, and translational and outcomes 
+            research. Dr. Turk's extensive work in the private sector includes supporting the development 
+            of medical diagnostics and devices from research to market launch. He has authored or co-authored 
+            over 60 peer-reviewed articles. He is a member of the American Statistical Association, International 
+            Statistical Institute, and the R Epidemics Consortium. His primary areas of interest are sampling, 
+            clinical trial and experimental design, advanced modeling and forecasting, and methods in Artificial Intelligence.
+        </p>
+    </div>
+    <div style="flex: 1;">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Picture" style="max-width: 100%; border-radius: 10px;">
+    </div>
+</div>
+{% endblock %}
