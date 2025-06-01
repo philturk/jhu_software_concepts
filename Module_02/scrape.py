@@ -1,6 +1,6 @@
 # scrape.py
 # This script scrapes the HTML pages from The Grad Cafe using urllib3 and saves the combined HTML content.
-# It follows pagination to pull in an arbitrary number of applicant entries (e.g., 50 to 10,000).
+# It follows pagination to pull in an arbitrary number of applicant entries (e.g., 10,000).
 
 import urllib3
 import time
@@ -15,8 +15,8 @@ http = urllib3.PoolManager()
 base_url = "https://www.thegradcafe.com/survey/?q=Statistics&page={}"  # Page numbers are 1-indexed
 
 # Number of applicant entries to scrape
-TARGET_COUNT = 50  # Change this to 10000 when scaling up
-entries_per_page = 25  # Grad Cafe typically lists 25 entries per page
+TARGET_COUNT = 10000  # Change this to desired number of entries
+entries_per_page = 20  # AFAIK, Grad Cafe lists 20 entries per page
 
 # Calculate how many pages we need to visit
 page_count = (TARGET_COUNT + entries_per_page - 1) // entries_per_page
