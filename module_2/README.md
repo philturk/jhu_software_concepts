@@ -8,7 +8,7 @@ Approach and Notes:
 
 2025_05_31: Finish building *scrape.py* and pull 10,000 applicant records from [The GradCafe](https://www.thegradcafe.com).
 
-2025_06_01: Finish building *clean.py* and process records into clean JSON file format.
+2025_06_01: Finish building *clean.py* and process records into clean JSON file format. Please see [commit history](https://github.com/philturk/jhu_software_concepts/commits/main/) for further details. 
 
 Known Bugs and Gotchas:
 
