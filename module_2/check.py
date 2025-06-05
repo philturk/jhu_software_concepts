@@ -13,7 +13,7 @@ paths = [
     "/cgi-bin/",
     "/index-ad-test.php",
     "/admin/",
-    "survey/?q=Computer+Science"]
+    "survey/"]
 
 for path in paths:
     full_url = parse.urljoin(url, path)
@@ -26,4 +26,4 @@ for path in paths:
 ## phil cannot access https://www.thegradcafe.com/cgi-bin/
 ## phil cannot access https://www.thegradcafe.com/index-ad-test.php
 ## phil can access https://www.thegradcafe.com/admin
-## phil can access https://www.thegradcafe.com/survey/?q=Computer+Science
+## phil can access https://www.thegradcafe.com/survey

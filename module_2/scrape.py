@@ -12,7 +12,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 http = urllib3.PoolManager()
 
 # Base URL for Grad Cafe search results with pagination
-base_url = "https://www.thegradcafe.com/survey/?q=Statistics&page={}"  # Page numbers are 1-indexed
+# base_url = "https://www.thegradcafe.com/survey/?q=Statistics&page={}"  # Page numbers are 1-indexed
+base_url = "https://www.thegradcafe.com/survey/?page={}"  # Page numbers are 1-indexed
 
 # Number of applicant entries to scrape
 TARGET_COUNT = 10000  # Change this to desired number of entries

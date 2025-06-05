@@ -105,7 +105,7 @@ for row in rows:
                     current_entry["GRE_V"] = match.group(1)
 
             elif txt.startswith("GRE AW"):
-                match = re.search(r"GRE AW\s+(\d\.\d{1,2})", txt)
+                match = re.search(r"GRE AW\s+(\d(?:\.\d{1,2})?)", txt)
                 if match:
                     current_entry["GRE_AW"] = match.group(1)
 
