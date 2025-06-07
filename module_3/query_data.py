@@ -21,7 +21,7 @@ with conn.cursor() as cursor:
     """)
     print("1. Fall 2025 Applicants:", cursor.fetchone()[0])
 
-    ## 2. Percent international students (not 'American' or 'Other')
+    ## 2. Percent international students (not 'American' or 'Other'); see note in README.md
     cursor.execute("""
         SELECT ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM applicants), 2)
         FROM applicants
@@ -29,23 +29,46 @@ with conn.cursor() as cursor:
     """)
     print("2. Percent International Students:", cursor.fetchone()[0], "%")
 
-    ## 3. Average GPA, GRE, GRE_V, GRE_AW where those values are not null
-    cursor.execute("""
-        SELECT 
-            ROUND(AVG(gpa)::numeric, 2), 
-            ROUND(AVG(gre)::numeric, 2), 
-            ROUND(AVG(gre_v)::numeric, 2), 
-            ROUND(AVG(gre_aw)::numeric, 2)
-        FROM applicants
-        WHERE gpa IS NOT NULL AND gre IS NOT NULL AND gre_v IS NOT NULL AND gre_aw IS NOT NULL;
-    """)
-    print("3. Averages (GPA, GRE, GRE_V, GRE_AW):", cursor.fetchone())
-
-    ## 4. Average GPA of American students in Fall 2025
+    ## 3. Average GPA, GRE, GRE_V, GRE_AW analyzed separately with bounds where applicable
     cursor.execute("""
         SELECT ROUND(AVG(gpa)::numeric, 2)
         FROM applicants
-        WHERE term = 'Fall 2025' AND us_or_international = 'American' AND gpa IS NOT NULL;
+        WHERE gpa IS NOT NULL;
+    """)
+    gpa_avg = cursor.fetchone()[0]
+
+    cursor.execute("""
+        SELECT ROUND(AVG(gre)::numeric, 2)
+        FROM applicants
+        WHERE gre IS NOT NULL AND gre <= 340;
+    """)
+    gre_avg = cursor.fetchone()[0]
+
+    cursor.execute("""
+        SELECT ROUND(AVG(gre_v)::numeric, 2)
+        FROM applicants
+        WHERE gre_v IS NOT NULL AND gre_v <= 170;
+    """)
+    gre_v_avg = cursor.fetchone()[0]
+
+    cursor.execute("""
+        SELECT ROUND(AVG(gre_aw)::numeric, 2)
+        FROM applicants
+        WHERE gre_aw IS NOT NULL AND gre_aw <= 6.0;
+    """)
+    gre_aw_avg = cursor.fetchone()[0]
+
+    print("3. Averages:")
+    print("   GPA:", gpa_avg)
+    print("   GRE:", gre_avg)
+    print("   GRE_V:", gre_v_avg)
+    print("   GRE_AW:", gre_aw_avg)
+
+    ## 4. Average GPA of American students in Fall 2025 with max cap
+    cursor.execute("""
+        SELECT ROUND(AVG(gpa)::numeric, 2)
+        FROM applicants
+        WHERE term = 'Fall 2025' AND us_or_international = 'American' AND gpa IS NOT NULL AND gpa <= 4.00;
     """)
     print("4. Avg GPA of American students in Fall 2025:", cursor.fetchone()[0])
 
