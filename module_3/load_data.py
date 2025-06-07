@@ -60,7 +60,7 @@ def load_applicants_from_json(json_path):
 
     transformed = []
     for applicant in data:
-        program = f"{applicant['School']} {applicant['Program']}"
+        program = f"{applicant['School']}, {applicant['Program']}"
         comments = applicant.get("Comments", "NA")
         date_added = datetime.strptime(applicant["DateAdded"], "%B %d, %Y").date()
         url = applicant.get("URL", "")
