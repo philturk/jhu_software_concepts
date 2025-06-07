@@ -6,6 +6,8 @@ Approach and Notes:
 
 2025_06_06: Add *load_data.py* for PostgreSQL database operations after deeper understanding gained from last night's office hour.
 
+2025_06_07: Add *query_data.py* for PostgreSQL data analysis and applicant statistics
+
 Known Bugs and Gotchas:
 
 2025_06_06: I am using a local PostgreSQL server.
