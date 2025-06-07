@@ -38,14 +38,14 @@ with conn.cursor() as cursor:
     gpa_avg = cursor.fetchone()[0]
 
     cursor.execute("""
-        SELECT ROUND(AVG(gre)::numeric, 2)
+        SELECT ROUND(AVG(gre)::numeric, 1)
         FROM applicants
         WHERE gre IS NOT NULL AND gre <= 340;
     """)
     gre_avg = cursor.fetchone()[0]
 
     cursor.execute("""
-        SELECT ROUND(AVG(gre_v)::numeric, 2)
+        SELECT ROUND(AVG(gre_v)::numeric, 1)
         FROM applicants
         WHERE gre_v IS NOT NULL AND gre_v <= 170;
     """)
