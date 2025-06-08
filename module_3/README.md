@@ -11,6 +11,8 @@ Approach and Notes:
 - I note that there is no `Other` value in the `us_or_international` column variable of the applicants database table.
 - For Questions 3. and 4. from Part 2 of the assignment, note that bounds were put into place. I discuss this in the written assignment. 
 
+2025_06_08: Add Flask application structure with routes and database connection; include CSS and HTML templates for data analysis display. 
+
 Known Bugs and Potential Issues:
 
 2025_06_06: I am using a local PostgreSQL server.
