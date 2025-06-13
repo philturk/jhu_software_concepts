@@ -30,6 +30,8 @@ def test_pizza_str():
 
 ## Test cost calculation of Pizza object
 ## Checks if the cost method returns the expected value
+## N.b., would be ideal candidate for parameterization to 
+## verify multiple combos but was not asked for in homework
 @pytest.mark.pizza
 def test_pizza_cost():
     pizza = Pizza("thin", ["pesto"], "mozzarella", ["mushrooms"])
