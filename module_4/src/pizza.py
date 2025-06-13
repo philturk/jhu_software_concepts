@@ -1,7 +1,6 @@
-## A class to represent a pizza order with methods to calculate cost and display details.
+## Pizza class to represent a pizza order with methods to calculate cost and display details.
 ## Includes predefined costs for crusts, sauces, and toppings.
 
-## Pizza class with cost calculation and string representation.
 class Pizza:
     crust_costs = {
         "thin": 5,

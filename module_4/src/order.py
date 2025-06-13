@@ -1,9 +1,8 @@
-## Order class for managing pizza orders
+## Order class for managing pizza orders and overall order details.
 ## Includes methods for adding pizzas, calculating total cost, and marking as paid.
 
 from src.pizza import Pizza
 
-## Order class to manage multiple pizzas and overall order details.
 class Order:
     ## This method sets up the initial state of a new order.
     def __init__(self):
