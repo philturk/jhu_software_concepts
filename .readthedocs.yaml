@@ -8,12 +8,14 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.12"  # Use supported version
-  # Set the directory where Sphinx will be executed
-  directory: module_4/sphinx_docs
-
+  
 # Build documentation in the "sphinx_docs/" directory with Sphinx
 sphinx:
    configuration: module_4/sphinx_docs/conf.py
+
+python:
+  install:
+    - path: .   
 
 # Optionally, but recommended,
 # declare the Python requirements required to build your documentation
