@@ -14,6 +14,7 @@ Approach and Notes:
 
 2025_06_14:
 - Enhance documentation in Order and Pizza classes; edit Sphinx-generated HTML documentation
+- Had a lengthy battle getting Read The Docs to play nicely with GitHub. This required massaging the *.readthedocs.yaml* file. The link to my Sphinx Read the Docs documentation can be found here: https://jiu-software-concepts.readthedocs.io/en/latest/.   
 
 Known Bugs and Potential Issues:
 
