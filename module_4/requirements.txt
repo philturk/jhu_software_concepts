@@ -1,0 +1,7 @@
+# Testing
+pytest==8.4.0
+pytest-cov==6.2.1
+
+# Documentation
+sphinx>=7.0  # You can pin to sphinx==8.2.3 if you prefer
+sphinx-rtd-theme==3.0.2
