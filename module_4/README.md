@@ -10,11 +10,10 @@ Approach and Notes:
 - Add Order (*order.py*) and Pizza (*pizza.py*) classes for managing pizza orders and cost calculations.
 
 2025_06_13:
-- Finished building out Sphinx generated HTML using `sphinx_rtd_theme` theme.
+- Finished building out Sphinx-generated HTML using `sphinx_rtd_theme` theme.
 
 2025_06_14:
-- 
-
+- Enhance documentation in Order and Pizza classes; edit Sphinx-generated HTML documentation
 
 Known Bugs and Potential Issues:
 
